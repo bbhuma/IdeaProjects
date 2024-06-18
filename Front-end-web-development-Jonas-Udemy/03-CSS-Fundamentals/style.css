@@ -1,0 +1,379 @@
+/* Universal Selector which only applies to all the elements, they are not inherited, directly applied to all elements.  */
+* {
+  /*  border-top: 5px solid red; This will add the border on top of every html element, which does not look good but can be done.  */
+  /* Global Reset of padding, border and Margin in Universal Selector;
+  Resetting the margin and padding is the first thing we need to do. 
+  Wherever Backgraound colors are there, we should use padding and margin*/
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  /* Inheritance and Overridden */
+  /* color: red;  Lowest priority, when it is not overridden,inherited selectors gets easily gets overrided */
+  /* All TEXT properties get inherited to all the elements of body, they are not directly applied, they are inherited. 
+But other properties that are only good to body, are not applied to all the elements. 
+*/
+  /* background-color: rgba(116, 99, 54, 0.521); */
+  font-family: sans-serif;
+  color: #444;
+  border-top: 5px solid #1098ad; /*This only to top of the body */
+  /* margin: 0; This margin reset does not work, it has to be in the universal selector */
+
+  /* Give absolute position of your button, in respect to complete body element.  */
+  position: relative;
+}
+nav {
+  /* now style of nav are getting inherited from  nav selector. */
+  font: size 18px;
+  text-align: center;
+}
+/* Adding margins to links */
+nav a:link {
+  background-color: #eee;
+  padding: 10px;
+  margin-right: 20px;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  /* Now we can set height, width of images etc and add  padding and margin on inline elements with line below */
+  display: inline-block; /*With out this, we can not add margins on top, only horizontal margins can be added for inline elements.  */
+}
+.main-header nav a:link {
+  margin-top: 15px; /* Alaways the complex CSS with higher specificity gets picked up*/
+}
+/* REMOVING MARGINS TO LAST ELEMENTS */
+nav a:link:last-child {
+  margin-right: 0;
+}
+
+article {
+  margin-bottom: 40px;
+}
+
+.related {
+  /* list-style: square; */
+  list-style: none;
+}
+
+.container {
+  width: 1200px; /* Giving the container a width is first step */
+  margin-left: auto;
+  margin-right: auto; /*Then give a margin on left an dright so that the content  is centered */
+  margin: 0 auto;
+  position: relative; /* Adding it in container in the header section makes more sense, since page is centured now. */
+}
+
+.main-header {
+  background-color: #e4e1e1;
+  /* padding: 20px; This inlcudes padding on all 4 sides
+  padding-top: 20px;
+  padding-left: 40px; */
+  padding: 20px 40px; /*first indicates left and second indidcates right padding  */
+  margin-bottom: 60px;
+  /* height: 160px; */
+  height: auto;
+  /* border: 5px solid #1098ad; This gives border on all sides
+  border-top: 5px solid #1098ad; */
+}
+
+.post-header {
+  margin-bottom: 60px;
+  position: relative;
+}
+
+aside {
+  background-color: #e4e1e1;
+  border-top: 5px solid #1098ad;
+  border-bottom: 5px solid #1098ad;
+  border: 50px 0;
+  margin-top: 20px;
+  width: 500px;
+}
+
+/*SMALLER ELEMENTS  */
+
+/* We always use CSS Classes and rarely use id's */
+/* CSS Rules: selector + declaration block(one or more declarations; key:value pairs) */
+/* List selector */
+/*No need of this as we have the same properties inherited from Body Selector.  
+h1,
+h2,
+h3,
+h4,
+p,
+li {
+  font-family: sans-serif;
+  color: #444;
+} */
+h1,
+h2,
+h3 {
+  color: #1098ad;
+}
+
+h1 {
+  /* font-size: 26px; this is a repetitive declaration across mutliple selectors*/
+  /* font-family: sans-serif; */
+  font-style: italic;
+  text-transform: uppercase;
+  color: #1098ad;
+}
+h2 {
+  font-size: 40px;
+  margin-bottom: 30px;
+  background-color: #eee;
+  position: relative;
+  /* font-family: sans-serif; */
+}
+h3 {
+  font-size: 30px; /* font-family: sans-serif; */
+  margin-bottom: 20px;
+  margin-top: 40px; /*Collapsing margin(Space b/e =max of the top and bottom) happens since the top p margin is 15px and margin-top has 40px margin, they both collaspse togther to 40px margin */
+}
+p {
+  font-size: 22px;
+  margin-bottom: 15px;
+  /* font-family: sans-serif; */
+  line-height: 1.5;
+  /* display: inline; */
+}
+
+/* Show the numbers and bullets */
+ul,
+ol {
+  margin-left: 50px; /* when we reset margin the numbers and bullet points ar elost, we need to add margin-left for that purpose*/
+  margin-bottom: 20px; /* when we reset margin the numbers and bullet points ar elost, we need to add margin-left for that purpose*/
+}
+h4 {
+  font-size: 20px;
+  /* font-family: sans-serif; */
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+}
+/* Styling list items */
+li {
+  font-size: 20px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  /* display: inline; */
+}
+li:last-child {
+  margin-bottom: 0;
+}
+/* Descendant selector, has a different rule to p elements inside of footer.P is child of footer */
+/* footer p {
+  font-size: 16px;
+} */
+
+/* ID - Can not be repeated again, but classes can be reused multiple times */
+/* * CSS Classes- can give additional styling to the html elements, to keep them unique  */
+#copyright {
+  font-size: 16px;
+}
+/* Descendant of descendant selector-  This is encodes the html strucutre into scc, not good idea, so use ID,CLASS of CSS. */
+/* article header p {
+  font-style: italic;
+} */
+
+#author {
+  font-style: italic;
+  font-size: 18px;
+}
+
+/* CSS Classes- can gice additional styling to the html elements, to keep them unique  */
+/* Selecting the paragraph multiple times -  */
+.related-author {
+  font-size: 18px;
+  font-weight: bold;
+}
+/* ul {
+  list-style: none;
+} */
+
+By using class,
+/* we can only remove the unnecessary buller points.  */
+
+
+/* //Element selector, when we use the element to select; */
+
+
+/* Entire page can be given some back-ground color by using body element
+body {
+  background-color: #dde01c27;
+  background-color: orangered;
+} */
+
+/* Suedo Classes: These work best for Ordered list or Un-ordered list, */
+/* .first-li {
+  font-weight: bold;
+} */
+
+li:first-child {
+  font-weight: bold;
+}
+
+li:last-child {
+  font-weight: italic;
+}
+li:nth-child(odd) {
+  font-weight: bold;
+}
+li:nth-child(even) {
+  font-style: italic;
+}
+li:nth-child(2) {
+  color: violet;
+}
+
+/* //But Sudo classes dont work for non similar elements like artcile, wors for mutliple similar li elements.  */
+
+/* Misconception: This works only if the first child of article is p, since first emenet here is header, this syntax does not work.*/
+article p:first-child {
+  color: red;
+}
+
+article p:last-child {
+  color: red;
+}
+
+/* Styling the links and hypelinks */
+
+/*We should not target the anchor directly, instead use suedo classes to target actual links. */
+/* First CSS targets all anchors, even if the y are not links, we will override it with another css which is only for links, by suedo classes */
+
+/* Styling hyperlinks LVHA - Link Visited Hover Active- Psuedo Classes
+Link, Visted, Hover, Active - They all have more specificity than the normal anchir tag.  
+*/
+a {
+  color: red;
+  margin-bottom: 15px;
+}
+a:any-link {
+  color: #1098ad;
+  text-decoration: none; /*remove hyperlinks*/
+}
+a:visited {
+  color: #777; /* Usually people use same color for visited links.*/
+  color: #1098ad;
+}
+
+a:hover {
+  color: red;
+  font-weight: bold;
+  font-size: 20px;
+  text-decoration: underline red; /*remove hyperlinks*/
+}
+/* when you click link, that when it is active */
+a:active {
+  color: blue;
+  text-decoration: underline blue;
+  font-style: italic;
+  background: red;
+  text-decoration: underline; /*remove hyperlinks*/
+}
+
+/* Conflicting selectors- 
+Check order specificity , by hovering the selector
+Id and Classes will get most precedence than element selectors
+Order of precedence is !important > InlineCSS > ID > Class(Bottom Most) > Element selector > Universal Selector     */
+#copyright {
+  color: red;
+}
+.copyright {
+  color: blueviolet;
+}
+.text {
+  color: orange;
+}
+
+footer p {
+  /* Only use this when you are messed up and not able to figure out the conflicts 
+  Write selectors simple, dont write nesting,too may classes and id's. if not able figure out use !important*/
+  color: green !important;
+}
+
+.post-image {
+  /* width: 800px; */
+  /* Height, width, margin and padding can be used for images now, Images are inline elements but they do bahave like inline Block elements */
+  width: 100%; /* 100% of the original width of the screen of the parent contianer, parent here is html header  */
+  height: auto; /*auto is used Only when you already mentioned the dimesnions in html  */
+  margin: 5px;
+  /* display:inline-block; No need to write this because they do behave like inline block elements by defalult */
+}
+button {
+  /* button is a block level element */
+  font-size: 22px;
+  padding: 20px;
+  cursor: pointer;
+  position: absolute;
+  /* Sets on the extreme left top corner. 
+  top: 0px;
+  left: 0px; */
+
+  /* Sets button at bottom of the view port, meaning the visible part of the page, thats not what we want though
+  bottom: 0px;
+  left: 50px; */
+
+  /* We want to absolutledy position the element relative to some parent: */
+  bottom: 50px;
+  right: 50px;
+  /* Declare position: relative; in body element or wherever you want ths button. */
+}
+
+/* We can apply CSS on two childs of nav */
+/* nav a:link {
+  font-size: 18px;
+}
+nav a:link,
+nav p {
+  font-size: 25px;
+} */
+
+/* Suedo HTML Elements - */
+/* Changing the first book symbol from italic to normal  */
+h1::first-letter {
+  font-style: normal;
+  margin-right: 5px;
+}
+h2::first-letter {
+  font-size: 60px;
+}
+/* p::first-line {
+  color: red;
+} */
+/* Adjacent sibling selector, p coming right after h3  */
+h3 + p::first-line {
+  color: red;
+}
+
+/* Most important Psudeo elements are after and before of the selected element-  */
+h2::after {
+  content: "TOP"; /* This is the HTML content we are adding in CSS through Psuedo elements */
+  background-color: #ffe70e;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  /* Most important line to remember, if the padding changes are not reflecting, it may be a inline element, Pseudo elements are inline element by default, need to add the display:inline-block;  */
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -10px;
+  right: -25px;
+}
+
+h2::before {
+  content: "TOP"; /* This is the HTML content we are adding in CSS through Psuedo elements */
+  background-color: #ffe70e;
+  color: black;
+  font-size: 16px;
+  font-weight: bold;
+  /* Most important line to remember, if the padding changes are not reflecting, it may be a inline element, Pseudo elements are inline element by default, need to add the display:inline-block;  */
+  display: inline-block;
+  padding: 5px 10px;
+  position: absolute;
+  top: -15px;
+  left: -25px;
+}

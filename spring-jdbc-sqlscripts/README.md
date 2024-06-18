@@ -1,0 +1,1 @@
+check this - https://www.geeksforgeeks.org/spring-using-sql-scripts-with-spring-jdbc-jpa-hsqldb/?ref=lbp 

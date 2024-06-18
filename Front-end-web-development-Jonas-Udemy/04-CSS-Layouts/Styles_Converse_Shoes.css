@@ -1,0 +1,157 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: sans-serif;
+  line-height: 1.4;
+  font-size: 18px;
+  color: black;
+  border: 5px solid black; /* Always forgetting the 5px solid Color */
+}
+/* CONTAINER - to center the page  */
+/* .container {
+  width: 825px;
+  margin: 0 auto;
+} */
+/* PRODUCT */
+.product {
+  border: 5px solid black;
+  width: 825px;
+  margin: 50px auto; /* Add 50px on top and bottom, because they were glued up before with 0 px;  */
+  position: relative;
+}
+
+/* PRODUCT TITLE, can also use h2 selector, but use a seperate class for no conflicts */
+.product-title {
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 22px;
+  background-color: #dfdfdf;
+  padding: 15px 0px;
+  /* margin:15px:, this creates space outside the backgraound and not helpful */
+}
+/* Product information p a{} can be used, not prefered*/
+.price {
+  font-size: 24px;
+}
+
+/* Product information - p {} can be used, not prefered*/
+.shipping {
+  font-size: 16px;
+  font-weight: bold;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.sale {
+  background-color: red;
+  color: #fff;
+  font-size: 12px;
+  font-weight: bold;
+  text-transform: uppercase;
+  padding: 10px 20px;
+  /* letter-spacing: 2px; */
+  /* This is the line that makes the content occupy only upto the content width and not beyond. */
+  display: inline-block; /*The block only occupies the width of the content and not the entire width of page/parent */
+  position: absolute;
+  top: -20px;
+  left: -40px;
+}
+
+.paragraph {
+  margin-bottom: 10px;
+}
+
+/* More information links */
+.more-info:link,
+.more-info:visited {
+  font-size: 22px;
+  color: black;
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+/* Do hover and active in LVHA order only, copy them and do as a single selector */
+.more-info:hover,
+.more-info:active {
+  color: red;
+  text-decoration: none;
+}
+
+/* Product Details- Can be used a h3 tag, but use seperate class.  */
+.details-title {
+  font-size: 24px;
+  text-transform: uppercase;
+  text-align: left;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+.details-list {
+  /* Either you can do this in list or have a class created on the <ul> tag */
+  margin-left: 20px; /* when we reset margin the numbers and bullet points ar elost, we need to add margin-left for that purpose*/
+  margin-bottom: 20px;
+  list-style: square;
+}
+/* Descendant selector with one is a class and other is an element */
+.details-list li {
+  margin-bottom: 15px;
+}
+.details-list li:last-child {
+  margin-bottom: 0;
+}
+
+/* Button */
+.add-cart {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: #fff;
+  background-color: black;
+  cursor: pointer;
+  padding: 15px; /* Add padding to the button */
+  width: 100%;
+  border-top: 5px solid black;
+}
+.add-cart:hover {
+  color: #000;
+  background-color: #fff;
+  /* border: none; */
+}
+
+/* Descendant selector, selecting divs inside the class="SQAURES" */
+#squares {
+  /* Put the sqaures side by side, with out creating line breaks. */
+  display: inline-block;
+  /* margin-bottom: 0; Just mentioning them inline was enough, not needed to display the margin-bottom */
+}
+#squares div {
+  /* these styles will let the divs line up next to each other
+     while accepting dimensions */
+  display: block;
+  float: left;
+
+  /* By givinh them height and width - We can get the actual square we wanted to print */
+  width: 20px;
+  height: 20px;
+
+  /* a small margin to separate the blocks */
+  margin-right: 10px;
+}
+#square1 {
+  background: red;
+}
+#square2 {
+  background: blue;
+}
+#square3 {
+  background: green;
+}
+#square4 {
+  background: yellow;
+}
+#square5 {
+  background: teal;
+}
+#square6 {
+  background: violet;
+}

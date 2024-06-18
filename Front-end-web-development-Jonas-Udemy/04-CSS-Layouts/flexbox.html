@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Flexbox</title>
+    <style>
+      .el--1 {
+        background-color: blueviolet;
+      }
+      .el--2 {
+        background-color: orangered;
+      }
+      .el--3 {
+        background-color: green;
+        /* height: 250px; This height is the reference to all other contents  */
+        height: 150px; /* Tallest element, acts as the reference */
+      }
+      .el--4 {
+        background-color: goldenrod;
+      }
+      .el--5 {
+        background-color: palevioletred;
+      }
+      .el--6 {
+        background-color: steelblue;
+      }
+      .el--7 {
+        background-color: yellow;
+      }
+      .el--8 {
+        background-color: crimson;
+      }
+
+      .flex-container {
+        /* STARTER */
+        font-family: sans-serif;
+        background-color: #ddd; /*  back ground color of the empty continer */
+        font-size: 34px;
+        margin: 40px;
+
+        /* FLEXBOX */
+        display: flex; /* As you mention display:flex; All the container elements are side by side, without using any floats.  */
+
+        /* Flex Container Properties */
+        align-items: center; /* Aligns items horizontallsy along cross axis, Alignment is based on the highest element. */
+        align-items: flex-start; /* Put all others at start top of the Tallest, on top */
+        align-items: flex-end; /*Put all others at end bottom  of the Tallest, on bottom*/
+        align-items: stretch; /* all elements stretch as tall as the tallest elements*/
+        align-items: center; /* all elements stretch as tall as the tallest elements*/
+        align-items: baseline;
+
+        justify-content: center; /*Aligns items horizontallsy along main axis, Open up a lot of different opportunites */
+        justify-content: flex-start; /* Moves the items to  left end  */
+        justify-content: flex-end; /* Moves the items to  right end  */
+        justify-content: space-between; /* Moves the items to  right end  */
+        justify-content: space-around; /* Moves the items to  right end  */
+        justify-content: space-evenly; /* Moves the items to  right end  */
+      }
+
+      /* Flex Items Properties */
+    </style>
+  </head>
+  <body>
+    <div class="flex-container">
+      <!-- Flex continer and flex items -->
+      <div class="el el--1">HTML</div>
+      <div class="el el--2">and</div>
+      <div class="el el--3">CSS</div>
+      <div class="el el--4">are</div>
+      <div class="el el--5">amazing</div>
+      <div class="el el--6">languages</div>
+      <div class="el el--7">to</div>
+      <div class="el el--8">learn</div>
+    </div>
+  </body>
+</html>
